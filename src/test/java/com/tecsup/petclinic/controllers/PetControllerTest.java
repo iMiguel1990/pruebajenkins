@@ -39,7 +39,7 @@ class PetControllerTest {
 
     @Test
     public void testGetPets() throws  Exception{
-        int ID_FIRST_RECORD = 1;
+        int ID_FIRST_RECORD = 2;
          this.mockMvc.perform(get("/pets"))
                  .andExpect(status().isOk())
                  .andExpect(content().contentType(MediaType.APPLICATION_JSON))
@@ -48,15 +48,15 @@ class PetControllerTest {
 
     @Test
     public void testFindPetOK() throws Exception{
-        int ID = 1;
-        String NAME_PET= "Leo";
+        int ID = 2;
+        String NAME_PET= "BeethovenY";
         int TYPE_ID= 1;
         int OWNER_ID = 1;
-        Date DATE = new SimpleDateFormat("yyyy-MM-dd").parse("2023-11-01");
+        Date DATE = new SimpleDateFormat("yyyy-MM-dd").parse("2021-11-16");
         String DATE_STRING = new SimpleDateFormat("yyyy-MM-dd").format(DATE);
 
 
-        this.mockMvc.perform(get("/pets/1"))
+        this.mockMvc.perform(get("/pets/2"))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andExpect(status().isOk())
                 .andExpect( jsonPath("$.id").value(ID))
